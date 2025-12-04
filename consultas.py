@@ -162,3 +162,32 @@ def relatorio_pagamentos():
     print(f"Total Pago: R$ {total_pago:.2f} | Total Pendente: R$ {total_pendente:.2f}")
     
     return dados
+
+def orcamentos():
+    conn = conectar()
+    cur = conn.cursor()
+
+    cur.execute("""
+        SELECT
+            o.idorcamento,
+            o.dispositivo,
+            o.valor,
+            o.status,
+            p.nome AS cliente,
+            e.nome AS especialista
+        FROM Orcamento o
+        JOIN Pessoa p ON p.idpessoa = o.idcliente
+        JOIN Pessoa e ON e.idpessoa = o.idespecialista
+        ORDER BY o.data;
+    """)
+    orcamentos = cur.fetchall()
+
+    print("\n=== ORÇAMENTOS EXISTENTES ===")
+    if not orcamentos:
+        print("Nenhum orçamento cadastrado.")
+    else:
+        for o in orcamentos:
+            print(f"ID: {o[0]} | Dispositivo: {o[1]} | Valor: R$ {o[2]:.2f} | Status: {o[3]}")
+
+    conn.close()
+    return orcamentos

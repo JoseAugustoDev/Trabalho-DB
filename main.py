@@ -7,7 +7,8 @@ from consultas import (
     relatorio_completo_servicos,
     servicos_em_execucao,
     relatorio_pagamentos,
-    relatorio_especialistas_aprovacoes
+    relatorio_especialistas_aprovacoes,
+    orcamentos
 )
 
 def menu():
@@ -22,6 +23,7 @@ def menu():
         print("7 - Relatório completo de serviços")
         print("8 - Relatório de pagamentos")
         print("9 - Relatório de especialistas e aprovações")
+        print("10 - Orçamentos")
 
         print("0 - Sair")
 
@@ -45,6 +47,8 @@ def menu():
             relatorio_pagamentos()
         elif op == "9":
             relatorio_especialistas_aprovacoes()
+        elif op == "10":
+            orcamentos()
         elif op == "0":
             print("Encerrado.")
             break
