@@ -4,8 +4,10 @@ from crud_produto import (
 )
 from consultas import (
     produtos_mais_vendidos,
-    relatorio_servicos_completo,
+    relatorio_completo_servicos,
     servicos_em_execucao,
+    relatorio_pagamentos,
+    relatorio_especialistas_aprovacoes
 )
 
 def menu():
@@ -18,6 +20,8 @@ def menu():
         print("5 - Produtos mais vendidos")
         print("6 - Serviços em execução")
         print("7 - Relatório completo de serviços")
+        print("8 - Relatório de pagamentos")
+        print("9 - Relatório de especialistas e aprovações")
 
         print("0 - Sair")
 
@@ -36,7 +40,11 @@ def menu():
         elif op == "6":
             servicos_em_execucao()
         elif op == "7":
-            relatorio_servicos_completo()
+            relatorio_completo_servicos()
+        elif op == "8":
+            relatorio_pagamentos()
+        elif op == "9":
+            relatorio_especialistas_aprovacoes()
         elif op == "0":
             print("Encerrado.")
             break

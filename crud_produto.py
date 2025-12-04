@@ -72,7 +72,7 @@ def inserir_produto():
 def consultar_produtos():
     conn = conectar()
     cur = conn.cursor()
-    cur.execute("SELECT idProduto, descricao, quantidade FROM Produto")
+    cur.execute("SELECT idProduto, descricao, quantidade FROM Produto ORDER BY idProduto;")
     for row in cur.fetchall():
         print(row)
     conn.close()
