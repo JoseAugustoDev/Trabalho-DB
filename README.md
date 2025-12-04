@@ -2,5 +2,9 @@
 Aplicação para acessar o Banco de Dados
 
 TODO: 
-  Colocar descrição do dominio;
-  Explicar como rodar o programa.
+  Para iniciar o projeto na sua maquina, rode os seguintes comandos no terminal:
+    - python3 -m pip install psycopg2
+    - pip install dotenv
+
+  Para testar o programa:
+    - python3 main.py
